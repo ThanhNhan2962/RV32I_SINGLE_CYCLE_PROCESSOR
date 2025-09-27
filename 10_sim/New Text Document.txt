@@ -1,0 +1,13 @@
+D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/sim_log.txt
+do D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/run_brc.do
+//run sim
+
+do D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/run_regfile.do
+
+
+//sim regfile
+vlib work
+vlog regfile.sv tb_regfile.sv
+vsim work.tb_regfile
+add wave -r *
+run -all

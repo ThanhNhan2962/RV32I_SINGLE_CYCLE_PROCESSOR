@@ -1,0 +1,48 @@
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module brc
+# 
+# Top level modules:
+# 	brc
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_brc
+# 
+# Top level modules:
+# 	tb_brc
+# vsim -wlf D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/tb_brc.wlf tb_brc 
+# Loading sv_std.std
+# Loading work.tb_brc
+# Loading work.brc
+# Loading work.full_adder_32b
+# Loading work.full_adder_8b
+# Loading work.full_adder_1b
+# .main_pane.wave.interior.cs.body.pw.wf
+# === BRC Testbench Start ===
+# [Equal Signed] PASS
+# ** Error: [Less Signed] o_br_less mismatch: got 0, expected 1
+#    Time: 2 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Less Signed] PASS
+# ** Error: [Greater Signed] o_br_less mismatch: got 1, expected 0
+#    Time: 3 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Greater Signed] PASS
+# ** Error: [Less Unsigned] o_br_less mismatch: got 0, expected 1
+#    Time: 4 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Less Unsigned] PASS
+# ** Error: [Greater Unsigned] o_br_less mismatch: got 1, expected 0
+#    Time: 5 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Greater Unsigned] PASS
+# ** Error: [Zero vs Max Unsigned] o_br_less mismatch: got 0, expected 1
+#    Time: 6 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Zero vs Max Unsigned] PASS
+# ** Error: [Min Signed vs Zero] o_br_less mismatch: got 0, expected 1
+#    Time: 7 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Min Signed vs Zero] PASS
+# [Zero Equal] PASS
+# ** Error: [Max Equal Unsigned] o_br_less mismatch: got 1, expected 0
+#    Time: 9 ps  Scope: tb_brc.run_test File: D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv Line: 35
+# [Max Equal Unsigned] PASS
+# === BRC Testbench Complete ===
+# Break in Module tb_brc at D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv line 75
+# Simulation Breakpoint: Break in Module tb_brc at D:/CTMT/Milestones/Milestone_2/milestone2/01_bench/tb_brc.sv line 75
+# MACRO D:\CTMT\Milestones\Milestone_2\milestone2\10_sim\run_brc.do PAUSED at line 13

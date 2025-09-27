@@ -1,0 +1,106 @@
+module tb_regfile;
+
+  //Clock & Reset
+  logic clk;
+  logic reset;
+  
+  //Inputs
+  logic [4:0]  rs1_addr, rs2_addr, rd_addr;
+  logic [31:0] rd_data;
+  logic        rd_wren;
+  
+  //Outputs
+  logic [31:0] rs1_data, rs2_data;
+  
+  //Instantiate DUT
+  regfile DUT (
+  .i_clk      (clk),
+	.i_reset    (reset),
+	.i_rs1_addr (rs1_addr),
+	.i_rs2_addr (rs2_addr),
+	.o_rs1_data (rs1_data),
+	.o_rs2_data (rs2_data),
+	.i_rd_addr  (rd_addr),
+	.i_rd_data  (rd_data),
+	.i_rd_wren  (rd_wren)
+  );
+  
+  //clock generation
+  initial clk = 0;
+  always #5 clk = ~clk;
+  
+  //Dump waveform
+  initial begin
+    $dumpfile ("10_sim/tb_regfile.vcd");
+    $dumpvars(0, tb_regfile);
+  end
+  
+  //Test sequence
+  initial begin
+    $display ("=== Regfile Testbench Start ===");
+    $timeformat (-9, 1, "ns", 10);
+  end
+	
+	//Test sequence
+	initial begin
+	  //Rest
+	  reset = 1;
+	  rd_wren = 0;
+	  rd_addr = 0;
+	  rd_data = 0;
+	  rs1_addr = 0;
+	  rs2_addr = 0;
+	  #10;
+	  reset = 0;
+	
+	  //Write to register 5
+	  rd_addr = 5;
+	  rd_data = 32'hDEADBEEF;
+	  rd_wren = 1;
+	  #10;
+	
+	  //Write to register 0 (should be ignored)
+	  rd_addr = 0;
+	  rd_data = 32'hFFFFFFFF;
+	  rd_wren = 1;
+	
+	
+	  //Read from register 5 and 0
+	  rd_wren = 0;
+	  rs1_addr = 5;
+	  rs2_addr = 0;
+	  #5;
+	
+	  //check values
+	  if (rs1_data !== 32'hDEADBEEF)
+	     $error ("Register 5 read failed: got %h", rs1_data);
+	  else 
+	    $display("PASS: Register 5 read OK");
+	  
+	  if (rs2_data !== 32'h00000000)
+	    $error ("Register 0 should be zero: got %h", rs2_data);
+	  else 
+	    $display ("PASS: Register 0 is zero");
+	  
+	  //Write to register 10
+	    rd_addr = 10;
+	    rd_data = 32'h12345678;
+	    rd_wren = 1;
+	    #10;
+	  
+	  //read from register 10
+	    rd_wren = 0;
+      rs1_addr = 10;
+      #5;
+    
+    if (rs1_data !== 32'h12345678)
+	    $error ("Register 10 read failed: got %h", rs1_data);
+	  else 
+	    $display("PASS: Register 10 read OK");
+	   
+	  $display ("=== Regfiles Testbench Complete ===");
+	  $stop;
+  end
+endmodule
+     	
+	  

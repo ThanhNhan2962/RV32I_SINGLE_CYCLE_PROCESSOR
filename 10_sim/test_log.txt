@@ -1,0 +1,22 @@
+
+# Compile of brc.sv was successful.
+# Compile of full_adder_32b.sv was successful.
+# Compile of tb_brc.sv was successful.
+# 3 compiles, 0 failed with no errors. 
+do 10_sim/run.do
+# Cannot open macro file: 10_sim/run.do
+
+D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/sim_log.txt
+# invalid command name "D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/sim_log.txt"
+do D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/run.do
+# ** Error: can't set "::PrefMain(file)": couldn't open "10_sim/sim_log.txt": no such file or directory
+# Error in macro D:\CTMT\Milestones\Milestone_2\milestone2\10_sim\run.do line 1
+# can't set "::PrefMain(file)": couldn't open "10_sim/sim_log.txt": no such file or directory
+#     while executing
+# "transcript file "10_sim/sim_log.txt"        "
+do D:/CTMT/Milestones/Milestone_2/milestone2/10_sim/run.do
+# ** Error: can't set "::PrefMain(file)": couldn't open "10_sim/sim_log.txt": no such file or directory
+# Error in macro D:\CTMT\Milestones\Milestone_2\milestone2\10_sim\run.do line 1
+# can't set "::PrefMain(file)": couldn't open "10_sim/sim_log.txt": no such file or directory
+#     while executing
+# "transcript file "10_sim/sim_log.txt"        "
